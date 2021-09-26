@@ -11,7 +11,8 @@ df = pd.read_excel('data/lotto.xlsx')
 df = df[use_column][2:]
 df = df.astype('int')
 
-for i, view in enumerate(range(views)):
+print("===============================")
+for i, view in enumerate(views):
     X = []
     for d in df.values[-view:]:
         X.append(one_hot_encoding(d))
@@ -24,7 +25,6 @@ for i, view in enumerate(range(views)):
     with torch.no_grad():
         pred = model(X)
         
-    print("===============================")
     values, indexs = torch.topk(pred, k=7)
     print(f"이번 주 로또 번호 {i} : {(indexs + 1).detach().cpu().numpy()[0][0]}")
-    print("===============================")
+print("===============================")
