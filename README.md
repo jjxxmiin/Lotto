@@ -7,9 +7,19 @@ Lotto number generation with Pytorch ~
 
 # How to run?
 
+## simple
+
 ```
 python start.py
 ```
+
+## streamlit
+
+```
+pip install streamlit
+python view.py
+```
+
 
 # Data
 
